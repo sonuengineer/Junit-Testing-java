@@ -24,23 +24,23 @@ public class DriversManagerTest
 
     @Test
     public void Passenger(){
-        Passenger firstPassenger = driversManager.getPassenger("44234");
+        Passenger fifthPassenger = driversManager.getPassenger("559988");
         boolean checkObj = false;
-        if("Carlos" == firstPassenger.getName() && "44234" == firstPassenger.getId() && 100 == firstPassenger.getBalance())
+        if("Cleon" == fifthPassenger.getName() && "559988" == fifthPassenger.getId() && 100 == fifthPassenger.getBalance())
         {
             checkObj = true;
         }
         Assert.assertEquals("Passenger is Not added..!",true , checkObj);
-        // Assert.assertEquals("Carlos",driversManager.getPassenger("44234").getName());
-        // Assert.assertEquals("44234",driversManager.getPassenger("44234").getId());
-        // Assert.assertEquals(100 ,driversManager.getPassenger("44234").getBalance());
+        // Assert.assertEquals("Cleon",driversManager.getPassenger("559988").getName());
+        // Assert.assertEquals("559988",driversManager.getPassenger("559988").getId());
+        // Assert.assertEquals(100 ,driversManager.getPassenger("559988").getBalance());
 
     }
     @Test
     public void Driver(){
-        Driver firstDriver = driversManager.getDriver("1234990");
+        Driver thirdDriver = driversManager.getDriver("9824990");
         boolean checkObj = false;
-        if("Emilio" == firstDriver.getName() && "1234990" == firstDriver.getId() && 10f == firstDriver.getFee())
+        if("Constanza" == thirdDriver.getName() && "9824990" == thirdDriver.getId() && 10f == thirdDriver.getFee())
         {
             checkObj = true;
         }
@@ -50,7 +50,7 @@ public class DriversManagerTest
     }
     @Test
     public void startTripTest(){
-        driversManager.startTrip("44234","9824990");
+        driversManager.startTrip("559988","9824990");
         boolean checkTrip = false;
         if(driversManager.getDriver("9824990").isAvailable() == false && driversManager.getPassenger("44234").isOnTrip() == true)
         {
@@ -61,7 +61,7 @@ public class DriversManagerTest
 
     @Test
     public void endTripTest(){
-        driversManager.endTrip("44234","1234990");
+        driversManager.endTrip("559988","1234990");
         boolean checkEndTrip = false;
         if(driversManager.getDriver("1234990").getBalance() >= 10f && driversManager.getPassenger("44234").getBalance() < 100)
         {
@@ -72,9 +72,9 @@ public class DriversManagerTest
 
     @Test
     public void nextAvailableDriverTest(){
-        driversManager.endTrip("44234","9824990");
+        driversManager.endTrip("558899","1234990");
         String availableDriver = driversManager.findNextAvailableDriver();
-        Assert.assertEquals("9824990" , availableDriver);
+        Assert.assertEquals("1234990" , availableDriver);
 
     }
 }
