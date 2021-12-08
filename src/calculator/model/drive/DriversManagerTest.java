@@ -31,10 +31,7 @@ public class DriversManagerTest
             checkObj = true;
         }
         Assert.assertEquals("Passenger is Not added..!",true , checkObj);
-        // Assert.assertEquals("Cleon",driversManager.getPassenger("559988").getName());
-        // Assert.assertEquals("559988",driversManager.getPassenger("559988").getId());
-        // Assert.assertEquals(100 ,driversManager.getPassenger("559988").getBalance());
-
+       
     }
     @Test
     public void Driver(){
